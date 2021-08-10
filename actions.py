@@ -10,6 +10,6 @@ def yes_or_no(question):
 def moves():
     first_move_choice = yes_or_no ("Do you want to do first move?")
     if first_move_choice == "y":
-        print ("Do your first move.")
+        print (f"Do your first move.\n")
     else:
-        print ("\nWait to be the second to chose your move.")
+        print ("Wait to be the second to chose your move.\n")
