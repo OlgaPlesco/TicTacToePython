@@ -1,4 +1,6 @@
-from board import full_board
+import players
+from players import Players
+
 
 def yes_or_no(question):
     response = None
@@ -8,8 +10,13 @@ def yes_or_no(question):
 
 
 def moves():
-    first_move_choice = yes_or_no ("Do you want to do first move?")
+    first_move_choice = yes_or_no(f"{Players.name}, do you want to do the first move?")
+    you = players.Players()
     if first_move_choice == "y":
-        print (f"Do your first move.\n")
+        print("Ok, do your first move with X.\n")
+        you.set_mark("X")
+        print(you.name, you.mark)
     else:
-        print ("Wait to be the second to chose your move.\n")
+        print("Ok, wait to be the second to chose your move with O.\n")
+        you.set_mark("O")
+        print(you.mark)
