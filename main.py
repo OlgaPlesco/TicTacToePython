@@ -1,6 +1,7 @@
 from actions import yes_or_no
 from actions import moves
 from players import Players
+from actions import flip_players
 
 
 def game():
@@ -9,6 +10,7 @@ def game():
     if play_or_not == "y":
         print("Game started.\n")
         moves()
+        flip_players()
     else:
         print(f"Bye, {Players.name}!")
 

@@ -1,5 +1,7 @@
 class Players:
     name = input("Please type your name.    ")
+    global current_player_mark
+
 
 #    def __init__(self, name, mark):
 #        self.name = name
@@ -19,6 +21,13 @@ class Players:
 
     def set_mark(self, new_mark):
         self.mark = new_mark
+
+    def set_win_game_combination(self, new_win_game_combination):
+        self.set_win_game_combination = new_win_game_combination
+
+    def set_current_player_mark(self, new_current_player_mark):
+        self.current_player_mark = new_current_player_mark
+
 
 # def get_player_details(current_player):
 #     first_player = ()
