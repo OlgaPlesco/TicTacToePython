@@ -1,6 +1,12 @@
+x_game_moves = []
+y_game_moves = []
+
 class Players:
     name = input("Please type your name.    ")
-    global current_player_mark
+
+
+    def current_player_mark(self, new_current_player_mark):
+        self.current_player_mark = new_current_player_mark
 
 
 #    def __init__(self, name, mark):
