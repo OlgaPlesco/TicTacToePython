@@ -66,5 +66,12 @@ def flip_players():
 #     return
 
 def check_win():
-    if any(x_game_moves for i in win_moves):
-        print("succes")
+    for list in win_moves:
+        if all(elem in x_game_moves for elem in list) or all(elem in y_game_moves for elem in list):
+            return True
+        else:
+            return False
+
+
+
+

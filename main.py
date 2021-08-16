@@ -12,17 +12,23 @@ from actions import check_win
 def game():
     play_or_not = yes_or_no("Do you want to play?")
 
+
     if play_or_not == "y":
         print("Game started.\n")
         moves()
         check_win()
-        while len(game_moves) != 9:
-            flip_players()
-            print(game_moves, x_game_moves, y_game_moves)
-            check_win()
-        else:
 
-            print("nn")
+        while len(game_moves) != 9:
+
+            if check_win() is False:
+                flip_players()
+                print(game_moves, x_game_moves, y_game_moves)
+                check_win()
+            else:
+                print("congratulations")
+                break
+        else:
+            print("draw")
 
     else:
         print(f"Bye, {Players.name}!")
