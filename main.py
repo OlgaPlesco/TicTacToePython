@@ -6,7 +6,7 @@ from actions import game_moves
 from players import x_game_moves
 from players import y_game_moves
 from actions import check_win
-
+from actions import check_position
 
 
 def game():
@@ -25,14 +25,22 @@ def game():
                 print(game_moves, x_game_moves, y_game_moves)
                 check_win()
             else:
-                print("congratulations")
+                print(f"Congratulations, {Players.current_player_mark}!")
                 break
         else:
             print("draw")
 
+
     else:
         print(f"Bye, {Players.name}!")
 
+def regame():
+    replay_or_not = yes_or_no("Would you repete the experience?")
+    if replay_or_not == "y":
+        return game()
+    else:
+        print(f"Bye, {Players.name}!")
 
 if __name__ == '__main__':
     game()
+    regame()

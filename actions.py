@@ -41,29 +41,31 @@ def moves():
 
 
 def flip_players():
-    position = input ("Do another move.\n")
-
-    if Players.current_player_mark == "X" :
+    position = input ("Do another move please.\n")
+    if Players.current_player_mark == "X":
         Players.current_player_mark = "O"
-        game_moves.append ( position )
+        game_moves.append(position)
         y_game_moves.append(position)
-        print ( len ( game_moves ), Players.current_player_mark)
-        if any(str(position) for i in game_moves):
-            print("este")
-    elif Players.current_player_mark == "O" :
-        Players.current_player_mark = "X"
-        game_moves.append ( position )
-        x_game_moves.append(position)
-        print ( len ( game_moves ), Players.current_player_mark)
-    return Players.current_player_mark
 
-# def check_move():
-#     while Players.current_player_mark = "X":
-#         if any(str(position) for i in game_moves):
-#             print("este")
-#         else:
-#             print("nu este")
-#     return
+    elif Players.current_player_mark == "O":
+        Players.current_player_mark = "X"
+        game_moves.append(position)
+        x_game_moves.append(position)
+
+
+def check_position():
+    for i in game_moves:
+        if position is None:
+            continue
+        elif any(elem in position for elem in i):
+            print("Position selected already.")
+            return position
+
+
+
+
+
+
 
 def check_win():
     for list in win_moves:
