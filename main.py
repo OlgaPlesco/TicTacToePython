@@ -10,7 +10,7 @@ def game():
         moves()
         check_win()
 
-        while len(game_moves) <= 9:
+        while len(game_moves) < 10:
 
             if not check_win():
                 flip_players()
