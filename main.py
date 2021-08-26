@@ -1,11 +1,5 @@
-from actions import yes_or_no
-from actions import moves
-from players import Players
-from actions import flip_players
-from actions import game_moves
-from players import x_game_moves
-from players import y_game_moves
-from actions import check_win
+from actions import yes_or_no, moves, flip_players, game_moves, check_win
+from players import Players, x_game_moves, y_game_moves
 
 
 def game():
