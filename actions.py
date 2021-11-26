@@ -1,10 +1,18 @@
 from players import Players, x_game_moves, y_game_moves
 from board import win_moves
 
-
+n = [1, 2, 3]
 game_moves = []
-position = None
 
+
+
+
+
+def pn(asq_position):
+    insert_position = None
+    while insert_position not in n:
+        insert_position = int(input(asq_position))
+#    return insert_position
 
 def yes_or_no(question):
     response = None
@@ -16,14 +24,23 @@ def moves():
     first_move_choice = yes_or_no(f"{Players.name}, do you want to do the first move?")
     you = Players()
 
+    def position():
+        position = None
+        try:
+            position = int(input("Insert a number,please."))
+        except ValueError:
+            return position
+
     if first_move_choice == "y":
-        position = int(input("Ok, do your first move with X.\n"))
+        move_position = position()
+        # move_position("Ok dodod")
+        # move_position = int(input("Ok, do your first move with X.\n"))
         you.set_mark ("X")
         #        print(you.name, you.mark)
         Players.current_player_mark = you.mark
         #       print(Players.current_player_mark)
-        game_moves.append (position)
-        x_game_moves.append(position)
+        game_moves.append (move_position)
+        x_game_moves.append(move_position)
         print (len(game_moves))
   #           game_moves.append (position)
     else:
@@ -73,7 +90,8 @@ def check_position():
 
 def check_win():
     for list in win_moves:
-        if all(elem in x_game_moves for elem in list) or all(elem in y_game_moves for elem in list):
+        if all(a in x_game_moves for a in list) or all(b in y_game_moves for b .+
+                                                       in list):
             return True
         else:
             return False
